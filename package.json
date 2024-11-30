@@ -1,0 +1,22 @@
+{
+  "name": "leavesmc-api-v2-dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:vercel": "vercel dev",
+    "dev:netlify": "netlify functions:serve"
+  },
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.2",
+    "@vclight/router": "^1.4.0",
+    "jsonwebtoken": "^9.0.1",
+    "mongodb": "^5.7.0",
+    "vclight": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.1.6",
+    "@netlify/functions": "^2.7.0",
+    "vercel": "^34.2.4",
+    "netlify-cli": "^17.25.0"
+  }
+}
