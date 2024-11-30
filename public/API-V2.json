@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "LeavesMC API",
+    "title": "MafakaMC API",
     "version": "2.0"
   },
   "servers": [
     {
-      "url": "https://api.leavesmc.org"
+      "url": "mafaka-api.vercel.app"
     },
     {
       "url": "http://localhost:3000"
@@ -15,11 +15,11 @@
   "tags": [
     {
       "name": "Query",
-      "description": "查询数据库中的数据"
+      "description": "Consultar dados no banco de dados"
     },
     {
       "name": "Commit",
-      "description": "提交数据到数据库"
+      "description": "Enviar dados para banco de dados"
     },
     {
       "name": "Download",
@@ -38,13 +38,13 @@
   "paths": {
     "/v2/projects": {
       "get": {
-        "summary": "获取项目列表",
+        "summary": "Obtenha lista de projetos",
         "tags": [
           "Query"
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -66,7 +66,7 @@
                 },
                 "example": [
                   {
-                    "repo": "Example/projectName",
+                    "repo": "Exemplo/projeto",
                     "id": "project",
                     "name": "projectName"
                   }
@@ -79,7 +79,7 @@
     },
     "/v2/projects/{project}": {
       "get": {
-        "summary": "获取指定项目的信息",
+        "summary": "Obtenha informações sobre um projeto específico",
         "tags": [
           "Query"
         ],
@@ -95,7 +95,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -143,7 +143,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -172,7 +172,7 @@
     },
     "/v2/projects/{project}/versions/{version}": {
       "get": {
-        "summary": "获取指定项目的指定版本的信息",
+        "summary": "Obtenha informações sobre a versão especificada do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -237,7 +237,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -266,7 +266,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds": {
       "get": {
-        "summary": "获取指定项目的指定版本的Build信息",
+        "summary": "Obtenha as informações de compilação da versão especificada do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -290,7 +290,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -347,7 +347,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -376,7 +376,7 @@
     },
     "/v2/projects/{project}/versions/{version}/latestGroupBuildId": {
       "get": {
-        "summary": "获取指定项目的指定版本组最新BuildID",
+        "summary": "Obtenha o BuildID mais recente do grupo de versões especificado do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -400,7 +400,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "text/plain": {
                 "example": "12"
@@ -408,7 +408,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -437,7 +437,7 @@
     },
     "/v2/projects/{project}/versions/{version}/differ/{verRef}": {
       "get": {
-        "summary": "获取指定Ref(Git Hash)与指定项目的指定版本最新Build的ID差值",
+        "summary": "Obtenha a diferença de ID entre o Ref (Git Hash) especificado e a versão mais recente da versão especificada do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -469,7 +469,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "text/plain": {
                 "example": "12"
@@ -477,7 +477,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -506,7 +506,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds/{build}": {
       "get": {
-        "summary": "获取指定项目的指定版本的指定Build的信息",
+        "summary": "Obtenha informações sobre a compilação especificada da versão especificada do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -538,7 +538,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -606,7 +606,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -635,7 +635,7 @@
     },
     "/v2/projects/{project}/version_group/{family}": {
       "get": {
-        "summary": "获取指定项目的指定版本组的所有子版本",
+        "summary": "Obtém todas as subversões do grupo de versões especificado para o projeto especificado",
         "tags": [
           "Query"
         ],
@@ -659,7 +659,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -699,7 +699,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -728,7 +728,7 @@
     },
     "/v2/projects/{project}/version_group/{family}/builds": {
       "get": {
-        "summary": "获取指定项目的指定版本组的所有Build的信息",
+        "summary": "Obtenha informações sobre todas as compilações do grupo de versões especificado do projeto especificado",
         "tags": [
           "Query"
         ],
@@ -752,7 +752,7 @@
         ],
         "responses": {
           "200": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/json": {
                 "schema": {
@@ -816,7 +816,7 @@
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -845,7 +845,7 @@
     },
     "/v2/projects/{project}/versions/{version}/builds/{build}/downloads/{download}": {
       "get": {
-        "summary": "获取指定项目的指定版本的指定Build的信息",
+        "summary": "Obtenha informações sobre a compilação especificada da versão especificada do projeto especificado",
         "tags": [
           "Download"
         ],
@@ -885,13 +885,13 @@
         ],
         "responses": {
           "301": {
-            "description": "成功",
+            "description": "sucesso",
             "content": {
               "application/java-archive": {}
             }
           },
           "404": {
-            "description": "未找到",
+            "description": "não encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -920,7 +920,7 @@
     },
     "/v2/commit/build": {
       "post": {
-        "summary": "提交一个新Build到数据库",
+        "summary": "Envie um novo Build para o banco de dados",
         "tags": [
           "Commit"
         ],
@@ -981,13 +981,13 @@
         },
         "responses": {
           "200": {
-            "description": "提交成功"
+            "description": "Envio bem-sucedido"
           },
           "400": {
-            "description": "请求格式错误"
+            "description": "Erro de formato de solicitação"
           },
           "401": {
-            "description": "未授权"
+            "description": "Não autorizado"
           }
         }
       }
