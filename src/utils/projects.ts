@@ -6,13 +6,7 @@ type Project = {
 const PROJECTS: Map<string, Project> = new Map();
 
 PROJECTS.set("leaves", {
-    name: "Leaves",
-    repo: "LeavesMC/Leaves"
+    name: "Mafaka",
+    repo: "MafakaMC/Mafaka"
 });
-
-PROJECTS.set("lumina", {
-    name: "Lumina",
-    repo: "LeavesMC/Lumina"
-});
-
 export default PROJECTS;
