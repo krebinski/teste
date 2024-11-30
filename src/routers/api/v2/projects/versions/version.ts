@@ -5,19 +5,19 @@ router.pattern(/^\/v2\/projects\/[^\/]+\/versions\/[^\/]+\/?$/, async function (
         console.log(`Verificando projeto ID: ${projectId}`);
 
         // Verifica se o projeto existe em PROJECTS
-        if (!PROJECTS.has(projectId)) {
+        if (!projects.has(projectId)) {
             console.log(`Projeto ${projectId} não encontrado.`);
-            return restError.$404(response);
+            return RTCError.$404(response);
         }
 
-        const projectData = PROJECTS.get(projectId);
+        const projectData = projects.get(projectId);
         const version = request.url.split("/")[5];
         console.log(`Buscando builds para a versão: ${version}`);
 
         // Verificação adicional para garantir que a versão não seja inválida
         if (!version || version.trim() === "") {
             console.log("Versão inválida.");
-            return restError.$400(response, "Versão inválida.");
+            return RTCError.$400(response, "Versão inválida.");
         }
 
         const client = mongo.client;
