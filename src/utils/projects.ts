@@ -5,7 +5,7 @@ type Project = {
 
 const PROJECTS: Map<string, Project> = new Map();
 
-PROJECTS.set("leaves", {
+PROJECTS.set("mafaka", {
     name: "Mafaka",
     repo: "MafakaMC/Mafaka"
 });
